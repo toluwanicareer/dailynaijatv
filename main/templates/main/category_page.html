@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+			<div class="col-md-9">
+				<div class="row">
+					
+						<div class="col-md-12 categories">
+					 		<h3 >{{category.name}}</h3>
+					 		<hr>
+					 	
+					</div>
+					{% for video in videos %}
+
+					<div class="col-md-3 video-list" ">
+						<div class="video-img back-img" style="background-image: url({{video.img_url}})" >
+						</div>
+						<h5>{{video.title}}</h5>
+						<span class="date">{{video.created_date}}</span>
+					</div>
+					{% endfor %}
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

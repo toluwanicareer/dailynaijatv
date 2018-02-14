@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DailyNaija TV</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'styles.css'  %}">
+		<link href="https://fonts.googleapis.com/css?family=Faustina" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	</head>
+	<body>
+		<style>
+			.swiper-container {
+		      width: 100%;
+		      height: 100%;
+
+		    }
+
+		    .swiper-slide-active{
+		    	
+		    }
+		    
+		    .swiper-slide {
+
+		      text-align: center;
+		      font-size: 18px;
+		      background-color:#ccc;
+		      /* Center slide text vertically */
+		      display: -webkit-box;
+		      display: -ms-flexbox;
+		      display: -webkit-flex;
+		      display: flex;
+		      -webkit-box-pack: center;
+		      -ms-flex-pack: center;
+		      -webkit-justify-content: center;
+		      justify-content: center;
+		      -webkit-box-align: center;
+		      -ms-flex-align: center;
+		      -webkit-align-items: center;
+		      align-items: center;
+		    }
+		</style>
+		<nav class="navbar navbar-default ">
+		  <div class="container">
+		  	<div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span> 
+		      </button>
+		      <a class="navbar-brand" href="#">DailyNaija TV</a>
+		    </div>
+		    
+		<div class="collapse navbar-collapse" id="myNavbar">    
+		    <ul class="nav navbar-nav">
+		      <li class="active"><a href="#">DailyNaija</a></li>
+		      <li class="text-center"><a href="#">Blog</a></li>
+		      <!--li><a href="#">Subscribe</a></li-->
+
+		    </ul>
+
+		    <!--ul class="nav navbar-nav">
+		      <li class="active"><a href="#">Channels</a></li>
+		      <li><a href="#">Blog</a></li>
+		      <li><a href="#">Subscribe</a></li>
+		    </ul-->
+
+		    <form class="navbar-form navbar-right" action="/action_page.php">
+		      <div class="form-group">
+		        <input type="text" class="form-control" placeholder="Search">
+		      </div>
+		      <button type="submit" class="btn btn-default">Submit</button>
+		      <!--a><img src="http://www.modernplasticsindia.com/attachments/Image/subscribe-now.png?template=generic" style="width:200px; height:50px"/></a-->
+
+
+
+		    </form>
+		    <a href="https://www.youtube.com/channel/UCLwzNMvOAVhS5u21SmyvoRg?sub_confirmation=1" target="_blank" class="btn btn-default navbar-right subscribe-btn" >Subscribe</a>
+
+		</div>
+		  </div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-sm-4 ">
+					<div class="row categories">
+						{% for video in latest_videos|slice:'0:2' %}
+						<div class="col-sm-12 col-md-12" style="margin-bottom:30px">
+							<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+							</div>
+							<h2><a href="{{video.link}}" target="_blank">{{video.title}}</a></h2>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="row categories">
+						{% for video in latest_videos|slice:'2:4' %}
+						<div class="col-sm-12 col-md-12"  style="margin-bottom:30px">
+							<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+							</div>
+							<h2><a href="{{video.link}}" target="_blank">{{video.title}}</a></h2>
+						</div>
+						{% endfor %}
+						
+					</div>
+					<div class=" hidden-sm greybg ad" style="background-image: url(https://tpc.googlesyndication.com/simgad/3180667891462563629)">
+					</div>
+ 
+					<div class="footer text-center">
+						<h3 class="">DailyNaija TV</h3>
+						<h4 style="margin-bottom:20px;">Follow Us :</h4>
+						<a target="_blank" href="https://www.facebook.com/DailyNaija-125132214848374/" style="color:#3b5998"><i class="fa fa-facebook fa-2x"></i></a>
+						<a target="_blank" href="https://www.instagram.com/thedailynaija/" style="color:#e95950"><i class="fa fa-instagram fa-2x"></i></a>
+
+					</br>
+					</br>
+						<a target="_blank" href="https://www.linkedin.com/company/dailynaija/" style="color:#3b5998"><i class="fa fa-linkedin fa-2x"></i></a>
+						<a  target="_blank" href="https://twitter.com/TheDailyNaija" style="color:#1dcaff"><i class="fa fa-twitter fa-2x"></i></a>
+					</br>
+					</br>
+						<a target="_blank" href="https://www.youtube.com/channel/UCLwzNMvOAVhS5u21SmyvoRg" style="color:#cc181e"><i class="fa fa-youtube fa-2x"></i></a>
+					<br>
+					</br>
+					</br>
+					<h3>Advertise</h3>
+					 <button type="submit" class="btn btn-default subscribe-btn" >Subscribe</button>
+
+					 <p style="margin-top: 30px;">@ 2018 DailyNaija </p>
+
+
+					</div>
+				</div>
+
+
+		{% block content %}{% endblock %}
+
+		</body>
+
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+
+	<script>
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+	
+
+</html>
