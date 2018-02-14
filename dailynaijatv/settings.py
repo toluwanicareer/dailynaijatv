@@ -25,7 +25,9 @@ SECRET_KEY = '1m)n1oyv01i==%7!*%br$-ykzxy85s-zeyyee4z=45((r7*wj)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+'dailynaija.tv'
+]
 
 
 # Application definition
