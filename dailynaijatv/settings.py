@@ -26,7 +26,7 @@ SECRET_KEY = '1m)n1oyv01i==%7!*%br$-ykzxy85s-zeyyee4z=45((r7*wj)'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-'dailynaija.tv'
+'dailynaija.tv',
 ]
 
 
