@@ -28,8 +28,7 @@ class CatView(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(CatView, self).get_context_data(**kwargs)
 		category=self.get_object()
-		context['videos']=category.video_set.all().order_by('-created_date')
-		
+		context['videos']=category.video_set.all().order_by('-created_date')	
 		return context
 
 
