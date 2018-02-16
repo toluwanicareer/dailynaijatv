@@ -184,14 +184,13 @@
   </script>
   <script>
 	  	$('a.modalButton').on('click', function(e) {
-	  	console.log('im here')
+	  	console.log('im here');
 	    var src = $(this).attr('data-src');
-	    var height = $(this).attr('data-height') || 100%;
-	    var width = $(this).attr('data-width') || 100%;
+	    
 
 	    $("#myModal iframe").attr({'src':src,
-	                               'height': height,
-	                               'width': width});
+	                               'height': '500',
+	                               'width': '100%'});
 	});
 
   </script>
