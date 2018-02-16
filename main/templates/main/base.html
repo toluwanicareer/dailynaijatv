@@ -55,9 +55,17 @@
 		      <a class="navbar-brand" href="#">DailyNaija TV</a>
 		    </div>
 		    
-		<div class="collapse navbar-collapse" id="myNavbar">    
+		<div class="collapse tvmenu navbar-collapse" id="myNavbar">    
 		    <ul class="nav navbar-nav">
-		      <li class="active"><a href="#">DailyNaija</a></li>
+		     <li class="dropdown">
+		        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Channels
+		        <span class="caret"></span></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="#">Page 1-1</a></li>
+		          <li><a href="#">Page 1-2</a></li>
+		          <li><a href="#">Page 1-3</a></li>
+		        </ul>
+		      </li>
 		      <li class="text-center"><a href="#">Blog</a></li>
 		      <!--li><a href="#">Subscribe</a></li-->
 
@@ -92,7 +100,7 @@
 						<div class="col-sm-12 col-md-12" style="margin-bottom:30px">
 							<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
 							</div>
-							<h2><a href="{{video.link}}" target="_blank">{{video.title}}</a></h2>
+							<h2><a class="js-video modalButton" data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
 						</div>
 						{% endfor %}
 					</div>
@@ -101,7 +109,7 @@
 						<div class="col-sm-12 col-md-12"  style="margin-bottom:30px">
 							<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
 							</div>
-							<h2><a href="{{video.link}}" target="_blank">{{video.title}}</a></h2>
+							<h2><a class="js-video modalButton" data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
 						</div>
 						{% endfor %}
 						
@@ -135,13 +143,37 @@
 				</div>
 
 
+				<div id="myModal" class="modal fade" role="dialog">
+           
+		           <div class="modal-dialog">
+
+		            <!-- Modal content-->
+		            <div class="modal-content">
+		             <div class="modal-header">
+		              <button type="button" class="close" data-dismiss="modal">&times;</button>
+		              <h4 class="modal-title"></h4>
+		              </div>
+		              <div class="modal-body" >
+		           <iframe ></iframe>
+		              </div>
+		              <div class="modal-footer">
+		              <p> </p>
+		            </div>
+		            
+		          <div class="col-sm-6 col-sm-offset-2"></div>
+		            </div>
+
+		           </div>
+		         </div>
+
+
 		{% block content %}{% endblock %}
 
 		</body>
 
-	
+	<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
-
 	<script>
     var swiper = new Swiper('.swiper-container', {
       navigation: {
@@ -149,6 +181,19 @@
         prevEl: '.swiper-button-prev',
       },
     });
+  </script>
+  <script>
+	  	$('a.modalButton').on('click', function(e) {
+	  	console.log('im here')
+	    var src = $(this).attr('data-src');
+	    var height = $(this).attr('data-height') || 100%;
+	    var width = $(this).attr('data-width') || 100%;
+
+	    $("#myModal iframe").attr({'src':src,
+	                               'height': height,
+	                               'width': width});
+	});
+
   </script>
 	
 

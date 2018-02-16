@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
 'dailynaija.tv',
 'www.dailynaija.tv',
+'localhost',
 ]
 
 

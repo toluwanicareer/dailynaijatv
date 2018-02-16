@@ -144,3 +144,16 @@ border-top: 1px solid var(--yt-border-color);
   font-family: 'Fira Sans', sans-serif;
 
 }
+
+.tvmenu .dropdown-toggle:hover{
+    color:#fff !important;
+    background-color: initial !important;
+}
+
+.tvmenu .dropdown-menu{
+  background-color: #185f7d !important;
+  }
+
+  .tvmenu .dropdown-menu>li>a{
+    color:#fff;
+  }
