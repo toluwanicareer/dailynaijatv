@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>DailyNaija TV</title>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="{% static 'styles.css'  %}">
 		<link href="https://fonts.googleapis.com/css?family=Faustina" rel="stylesheet">
@@ -43,7 +43,11 @@
 		      -webkit-align-items: center;
 		      align-items: center;
 		    }
+
+
+		 
 		</style>
+		<marquee>This text will scroll from right to left</marquee>
 		<nav class="navbar navbar-default ">
 		  <div class="container">
 		  	<div class="navbar-header">
@@ -87,29 +91,68 @@
 
 
 		    </form>
-		    <a href="https://www.youtube.com/channel/UCLwzNMvOAVhS5u21SmyvoRg?sub_confirmation=1" target="_blank" class="btn btn-default navbar-right subscribe-btn" >Subscribe</a>
+		    <a class="visible-xs" href="https://www.youtube.com/channel/UCLwzNMvOAVhS5u21SmyvoRg?sub_confirmation=1" target="_blank" class="btn btn-default navbar-right subscribe-btn" >Subscribe</a>
 
 		</div>
 		  </div>
 		</nav>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-sm-4 ">
+				<div class="col-lg-3 col-sm-12 ">
+					
+					<div class="row slider visible-xs">	
+					
+						<div class="col-md-9" style="height:500px;">
+						  <div class="swiper-container">
+						    <div class="swiper-wrapper">
+						    {% for video in feature %}
+						      <div class="swiper-slide" style="background-image: url({{video.img_url}})"></div>
+						    {% endfor %}
+						    </div>
+						    <!-- Add Pagination -->
+						    <div class="swiper-pagination"></div>
+						    <!-- Add Arrows -->
+						    <div class="swiper-button-next"></div>
+						    <div class="swiper-button-prev"></div>
+						  </div>
+						</div>
+						<div class="col-md-3 hidden-sm greybg ad" style="background-image: url(https://tpc.googlesyndication.com/simgad/3180667891462563629)">
+							
+							
+						</div>
+					 
+					</div>
 					<div class="row categories">
+						<div class="col-md-12  ">
+					 		<h3 >Latest Videos</h3>
+					 		<hr>
+					 	</div>
 						{% for video in latest_videos|slice:'0:2' %}
 						<div class="col-sm-12 col-md-12" style="margin-bottom:30px">
-							<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+							<div class="row">
+								<div class="col-xs-4 col-md-12">
+									<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+									</div>
+								</div>
+								<div class="col-xs-8 col-md-12">
+									<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
+								</div>
 							</div>
-							<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
 						</div>
 						{% endfor %}
 					</div>
 					<div class="row categories">
 						{% for video in latest_videos|slice:'2:4' %}
-						<div class="col-sm-12 col-md-12"  style="margin-bottom:30px">
-							<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+						<div class="col-sm-12 col-md-12" style="margin-bottom:30px">
+							<div class="row">
+								<div class="col-xs-4 col-md-12">
+									<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+									</div>
+								</div>
+								<div class="col-xs-8 col-md-12">
+									<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
+								</div>
 							</div>
-							<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
 						</div>
 						{% endfor %}
 						
@@ -117,14 +160,14 @@
 					<div class=" hidden-sm greybg ad" style="background-image: url(https://tpc.googlesyndication.com/simgad/3180667891462563629)">
 					</div>
  
-					<div class="footer text-center">
+					<div class="footer text-center hidden-sm hidden-xs" >
 						<h3 class="">DailyNaija TV</h3>
 						<h4 style="margin-bottom:20px;">Follow Us :</h4>
 						<a target="_blank" href="https://www.facebook.com/DailyNaija-125132214848374/" style="color:#3b5998"><i class="fa fa-facebook fa-2x"></i></a>
 						<a target="_blank" href="https://www.instagram.com/thedailynaija/" style="color:#e95950"><i class="fa fa-instagram fa-2x"></i></a>
 
-					</br>
-					</br>
+					<br>
+					<br>
 						<a target="_blank" href="https://www.linkedin.com/company/dailynaija/" style="color:#3b5998"><i class="fa fa-linkedin fa-2x"></i></a>
 						<a  target="_blank" href="https://twitter.com/TheDailyNaija" style="color:#1dcaff"><i class="fa fa-twitter fa-2x"></i></a>
 					</br>

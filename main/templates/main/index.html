@@ -1,9 +1,9 @@
 {% extends 'main/base.html' %}
 {% block content %}
 		
-				<div class="col-lg-9 col-sm-8" >
-					<div class="row slider">	
-					<!-- Swiper -->
+				<div class="col-lg-9 col-sm-12 col-xs-12" >
+					<div class="row slider hidden-xs hidden-sm">	
+					
 						<div class="col-md-9" style="height:500px;">
 						  <div class="swiper-container">
 						    <div class="swiper-wrapper">
@@ -29,11 +29,19 @@
 					 		<hr>
 					 	</div>
 					 	{% for video in entertainment_videos %}
-					 	<div class="col-md-3 col-sm-6">
-					 		<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+					 	<div class="col-md-3 col-xs-12 hidden-xs ">
+					 		<div class="row">
+								<div class="col-xs-4 col-md-12">
+									<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+									</div>
+								</div>
+								<div class="col-xs-8 col-md-12">
+									<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
+								</div>
 							</div>
-							<h2><a class="js-video modalButton" href="#" data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
 					 	</div>
+
+					 	
 					 	{% endfor %}
 					 	
 
@@ -44,10 +52,16 @@
 					 		<hr>
 					 	</div>
 					 	{% for video in lifestyle_videos %}
-					 	<div class="col-md-3 col-sm-6">
-					 		<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+					 	<div class="col-md-3 col-xs-12 hidden-xs ">
+					 		<div class="row">
+								<div class="col-xs-4 col-md-12">
+									<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+									</div>
+								</div>
+								<div class="col-xs-8 col-md-12">
+									<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
+								</div>
 							</div>
-							<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
 					 	</div>
 					 	{% endfor %}
 					 	
@@ -59,10 +73,16 @@
 					 		<hr>
 					 	</div>
 					 	{% for video in politic_videos %}
-					 	<div class="col-md-3 col-sm-6">
-					 		<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+					 	<div class="col-md-3 col-xs-12 hidden-xs ">
+					 		<div class="row">
+								<div class="col-xs-4 col-md-12">
+									<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+									</div>
+								</div>
+								<div class="col-xs-8 col-md-12">
+									<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
+								</div>
 							</div>
-							<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
 					 	</div>
 					 	{% endfor %}
 					 	
@@ -74,10 +94,16 @@
 					 		<hr>
 					 	</div>
 					 	{% for video in politic_videos|slice:'0:1' %}
-					 	<div class="col-md-3 col-sm-6">
-					 		<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+					 	<div class="col-md-3 col-xs-12 hidden-xs ">
+					 		<div class="row">
+								<div class="col-xs-4 col-md-12">
+									<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+									</div>
+								</div>
+								<div class="col-xs-8 col-md-12">
+									<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
+								</div>
 							</div>
-							<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
 					 	</div>
 					 	{% endfor %}
 					 	
@@ -90,10 +116,16 @@
 					 		<hr>
 					 	</div>
 					 	{% for video in politic_videos|slice:'0:1' %}
-					 	<div class="col-md-3 col-sm-6">
-					 		<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+					 	<div class="col-md-3 col-xs-12 hidden-xs ">
+					 		<div class="row">
+								<div class="col-xs-4 col-md-12">
+									<div class="greybg videoplaceholder" style="background-image: url({{video.img_url}})">
+									</div>
+								</div>
+								<div class="col-xs-8 col-md-12">
+									<h2><a class="js-video modalButton" href="#"  data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
+								</div>
 							</div>
-							<h2><a href="#"  class="js-video modalButton" data-src="http://www.youtube.com/embed/{{video.video_id}}?rel=0&wmode=transparent&fs=0"  data-target="#myModal" data-toggle="modal" target="_blank">{{video.title}}</a></h2>
 					 	</div>
 					 	{% endfor %}
 					 	
@@ -110,6 +142,30 @@
 				
 
 			</div>
+
+			<div class="footer text-center footertwo visible-xs " style="margin-bottom: 50px;">
+						<h3 class="">DailyNaija TV</h3>
+						<h4 style="margin-bottom:20px;">Follow Us :</h4>
+						<a target="_blank" href="https://www.facebook.com/DailyNaija-125132214848374/" style="color:#3b5998"><i class="fa fa-facebook fa-2x"></i></a>
+						<a target="_blank" href="https://www.instagram.com/thedailynaija/" style="color:#e95950"><i class="fa fa-instagram fa-2x"></i></a>
+
+					<br>
+					<br>
+						<a target="_blank" href="https://www.linkedin.com/company/dailynaija/" style="color:#3b5998"><i class="fa fa-linkedin fa-2x"></i></a>
+						<a  target="_blank" href="https://twitter.com/TheDailyNaija" style="color:#1dcaff"><i class="fa fa-twitter fa-2x"></i></a>
+					</br>
+					</br>
+						<a target="_blank" href="https://www.youtube.com/channel/UCLwzNMvOAVhS5u21SmyvoRg" style="color:#cc181e"><i class="fa fa-youtube fa-2x"></i></a>
+					<br>
+					<br>
+					<br>
+					<h3>Advertise</h3>
+					 <button type="submit" class="btn btn-default subscribe-btn" >Subscribe</button>
+
+					 <p style="margin-top: 30px;">@ 2018 DailyNaija </p>
+
+
+					</div>
 		</div>
 
 		
