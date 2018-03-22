@@ -183,3 +183,9 @@ border-top: 1px solid var(--yt-border-color);
     
 }
 }
+
+ @media (min-width: 768px){
+.container {
+    width: 98%;
+}
+}
