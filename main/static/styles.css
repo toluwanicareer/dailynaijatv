@@ -179,6 +179,7 @@ border-top: 1px solid var(--yt-border-color);
 @media only screen and (min-width: 760px){
   .categories h2 {
     font-size: 35px;
+    line-height: 30px;
     
 }
 }
